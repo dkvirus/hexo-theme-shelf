@@ -1,0 +1,29 @@
+<article class="post">
+    <h1 class="article-title">
+        <%= post.title %> <br>
+        <% if (post.author) { %>
+            <span>
+                <i class="glyphicon glyphicon-user"></i>
+                作者:
+                <%= post.author %>
+            </span>
+        <% } %>
+        <% if (post.date) { %>
+            <span>
+                <i class="glyphicon glyphicon-calendar"></i>
+                发表于:
+                <%- full_date(post.date) %>
+            </span>
+        <% } %>
+        <% if (post.updated) { %>
+            <span>
+                <i class="glyphicon glyphicon-calendar"></i>
+                最近更新:
+                <%- full_date(post.updated) %>
+            </span>
+        <% } %>
+    </h1>
+    <div class="article-content" itemprop="articleBody">
+        <%- post.content %>
+    </div>
+</article>

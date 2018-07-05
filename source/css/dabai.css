@@ -1,0 +1,344 @@
+.stage {
+    font-size: 5px;
+    width: 30em;
+    height: 35em;
+    position: fixed;
+    bottom: 5em;
+    left: -1em;
+    z-index: 100;
+    transform: scale(0.8);
+    display: block;
+}
+
+/* 头部 */
+.head {
+    width: 10em;
+    height: 7.5em;
+    position: absolute;
+    left: 10em;    /* 设置 div 水平居中 */
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 6px 6px #888888, 6px 6px 6px #ccc inset;
+    animation: head 5s infinite;
+    z-index: 100;
+}
+.eyes {
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    background-color: #000;
+    animation: close-eyes 4s infinite 2s alternate;
+}
+.eyes-left {
+    position: absolute;
+    left: 2em;
+    top: 3.5em;
+}
+.eyes-right {
+    position: absolute;
+    right: 2em;
+    top: 3.5em;
+}
+.mouth {
+    width: 3em;
+    height: 0.3em;
+    position: absolute;
+    top: 4.2em;
+    left: 3.5em;
+    border-radius: 50%;
+    box-shadow: 0px 1px 0px #000;
+}
+@keyframes close-eyes {
+    0% {   
+        height: 1.5em;
+        width: 1.5em;
+    }
+    10% {
+        height: 1.2em;
+        width: 1.2em;
+    }
+    20% {
+        height: 0.9em;
+    }
+    30% {
+        height: 0.6em;
+    }
+    40% {
+        height: 0.3em;
+    }
+    50% {
+        height: 0.1em;
+    }
+}
+@keyframes head {
+    0% {   
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(10deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(-10deg);
+    }
+}
+
+/* 身体 */
+.body {
+    width: 21.4em;
+    height: 32em;
+    position: absolute;
+    left: 50%;
+    top: 5.5em;
+    border-radius: 45% 45% 50% 50%;
+    background-color: #fff;
+    transform: translate(-50%, 0);
+    z-index: 99;
+    box-shadow: 6px 0 6px #ccc inset, -6px 0 6px #ccc inset;
+    display: block;
+}
+.heart {
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    box-shadow: 2px 2px 2px #ccc inset;
+    border: 1px solid #ccc;
+    position: absolute;
+    top: 6em;
+    right: 5.5em;
+    z-index: 111;
+}
+.belly {
+    width: 22.4em;
+    height: 26.4em;
+    border-radius: 42% 42% 50% 50%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: #fff;
+    box-shadow: 0px 3px 2px #888888, 0px -6px 6px #ccc inset;
+}
+.belly:before {
+    width: 2em;
+    height: 12em;
+    position: absolute;
+    left: -2px;
+    content: " ";
+    top: 5em;
+    border-radius: 50% 20% 20% 50%;
+    box-shadow: 4px 0px 6px #ccc inset;
+    transform: rotate(3deg);
+}
+.belly:after {
+    width: 2em;
+    height: 12em;
+    position: absolute;
+    right: -2px;
+    content: " ";
+    top: 5em;
+    border-radius: 20% 50% 50% 20%;
+    box-shadow: -4px 0px 6px #ccc inset;
+    transform: rotate(-3deg);
+    -webkit-transform: rotate(-3deg);
+}
+.comp {
+    position: absolute;
+    top: 6em;
+    left: 1em;
+    font-size: 18px;
+    font-family: "隶书", "宋体";    
+}
+
+
+/* 两条手 */
+@keyframes hand-left {
+    0% {   
+        transform: rotate(16deg);
+    }
+    75% {
+        transform: rotate(20deg);
+    }
+}
+.hand-left {
+    width: 7.8em;
+    height: 22.4em;
+    position: absolute;
+    left: 2em;
+    top: 7.5em;
+    background: #fff;
+    border-radius: 50%;
+    transform: rotate(16deg);
+    -webkit-transform: rotate(16deg);
+    box-shadow: 6px 6px 6px #ccc inset;
+    z-index: 91;
+    animation: hand-left 2s infinite linear;
+}
+.arm-left {
+    width: 5em;
+    height: 10em;
+    background: #fff;
+    position: absolute;
+    top: 16em;
+    border-radius: 50% 50% 40% 40%;
+    transform: rotate(-20deg);
+    left: 1.5em;
+}
+.arm-left:before {
+    content: "";
+    width: 1.5em;
+    height: 8.2em;
+    box-shadow: 4px 0px 6px #ccc inset;
+    transform: rotate(-0deg);
+    -webkit-transform: rotate(-0deg);
+    position: absolute;
+    left: 0;
+    top: 1em;
+    border-radius: 50% 20% 20% 50%;
+}
+.hand-left .finger-1 {
+    width: 1.4em;
+    height: 3em;
+    background: #fff;
+    position: absolute;
+    bottom: -4em;
+    left: 6.5em;
+    transform: rotate(-35deg);
+    -webkit-transform: rotate(-35deg);
+    border-radius: 50% 50% 40%;
+    box-shadow: 0px -2px 2px #ccc inset;
+    z-index: 90;
+}
+.hand-left .finger-2 {
+    width: 1.4em;
+    height: 4em;
+    background: #fff;
+    position: absolute;
+    bottom: -5.5em;
+    left: 5em;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    border-radius: 50% 50% 40%;
+    box-shadow: 0px -2px 2px #ccc inset;
+    z-index: 90;
+}
+.hand-left .finger-3 {
+    width: 1.4em;
+    height: 4em;
+    background: #fff;
+    position: absolute;
+    bottom: -6.2em;
+    left: 4.9em;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    border-radius: 50% 50% 40%;
+    box-shadow: 0px -2px 2px #ccc inset;
+    z-index: 89;
+}
+@keyframes hand-right {
+    0% {   
+        transform: rotate(-16deg);
+    }
+    75% {
+        transform: rotate(-20deg);
+    }
+}
+.hand-right {
+    width: 7.8em;
+    height: 22.4em;
+    position: absolute;
+    right: 2em;
+    top: 7.5em;
+    background: #fff;
+    border-radius: 50%;
+    transform: rotate(-16deg);
+    -webkit-transform: rotate(-16deg);
+    box-shadow: -6px -6px 6px #ccc inset;
+    z-index: 91;
+    animation: hand-right 2s infinite linear;
+}
+
+.arm-right {
+    width: 5em;
+    height: 10em;
+    position: absolute;
+    top: 16em;
+    right: 1.5em;
+    transform: rotate(20deg);
+    border-radius: 50% 50% 40% 40%;
+    background: #fff;
+}
+.arm-right:before{
+    content: "";
+    width: 1.5em;
+    height: 8.2em;
+    box-shadow: -4px 0px 6px #ccc inset;
+    transform: rotate(-0deg);
+    position: absolute;
+    right: 0;
+    top: 1em;
+    border-radius: 20% 50% 50% 20%;
+}
+.hand-right .finger-1 {
+    width: 1.4em;
+    height: 3em;
+    background: #fff;
+    position: absolute;
+    bottom: -4em;
+    right: 6.5em;
+    transform: rotate(35deg);
+    -webkit-transform: rotate(35deg);
+    border-radius: 50% 50% 40%;
+    box-shadow: 0px -2px 2px #ccc inset;
+    z-index: 90;
+}
+.hand-right .finger-2 {
+    width: 1.4em;
+    height: 4em;
+    background: #fff;
+    position: absolute;
+    bottom: -5.5em;
+    right: 5em;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    border-radius: 50% 50% 40%;
+    box-shadow: 0px -2px 2px #ccc inset;
+    z-index: 90;
+}
+.hand-right .finger-3 {
+    width: 1.4em;
+    height: 4em;
+    background: #fff;
+    position: absolute;
+    bottom: -6.2em;
+    right: 4.9em;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    border-radius: 50% 50% 40%;
+    box-shadow: 0px -2px 2px #ccc inset;
+    z-index: 89;
+}
+
+/* 两条腿 */
+.leg {
+    width: 8em;
+    height: 14.5em;
+    background-color: #fff;
+    
+}
+.leg-left {
+    position: absolute;
+    top: 29em;
+    left: 7em;
+    border-radius: 30% 40% 10px 45%;
+    box-shadow: -2px 0px 2px #999 inset, 4px 0px 4px #CCC inset, -4px 0px 4px #CCC inset;
+}   
+.leg-right {
+    position: absolute;
+    top: 29em;
+    right: 7em;
+    border-radius: 30% 40% 45% 10px;
+    box-shadow: 2px 0px 2px #999 inset, 4px 0px 4px #CCC inset, -4px 0px 4px #CCC inset;
+} 

@@ -1,0 +1,211 @@
+.post {
+    padding: 2% 8% 4% 8%;
+    border: 1px solid LightGrey;
+    font-family: 'Comic Sans MS';
+}
+
+.article-title {
+    font-family: Kai, Kaiti SC, KaiTi, BiauKai, \\6977\4F53, \\6977\4F53_GB2312, Songti SC, serif;
+    word-break: break-word !important;
+    font-size: 34px;
+    line-height: 1.2!important;
+    font-weight: 700;
+    margin: 10px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid LightGrey;
+}
+
+.article-title span {
+    font-size: 12px;
+    color: #999;
+    font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-weight: normal;
+    border-right: 1px solid #ccc;
+    padding-right: 15px;
+    margin-right: 15px;
+}
+
+.article-title span:last-child {
+    border-right: none;
+}
+
+/* p  h1  h2 */
+
+.post p {
+    word-break: break-word !important;
+    margin: 0 0 25px;
+}
+
+.post h1 {
+    font-size: 26px;
+    margin: 0 0 15px;
+    font-weight: 700;
+    color: #2f2f2f;
+    line-height: 1.7;
+    text-rendering: optimizelegibility;
+}
+
+.post h2 {
+    font-size: 24px;
+    margin: 0 0 15px;
+    font-weight: 700;
+    color: #2f2f2f;
+    line-height: 1.7;
+    text-rendering: optimizelegibility;
+}
+
+.post h3 {
+    font-size: 22px;
+    margin: 0 0 15px;
+    font-weight: 700;
+    color: #2f2f2f;
+    line-height: 1.7;
+    text-rendering: optimizelegibility;
+}
+
+.post a {
+    color: #3194d0;
+    cursor: pointer;
+}
+
+.post code {
+    display: inline-block;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: #fff;
+    background-color: #888;
+    border-radius: 5px;
+    margin: auto 3px;
+}
+.post code:hover {
+    background-color: pink;
+    color: #333;
+}
+
+/* 代码块 */
+.post .highlight {
+    border: 3px solid #e0dfcc;
+    border-radius: 10px;
+    background-color: #f5f2f0;
+    padding: 15px;
+    overflow: auto;
+    box-sizing: border-box;
+    font-family: Consolas, Monaco, 'Andale Mono', monospace;
+    color: #111111;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.post .highlight .gutter {
+    display: none;
+}
+
+.post .highlight table {
+    margin: 0;
+    border: none;
+}
+
+.post .code {
+    background-color: #f5f2f0;
+    padding: 0;
+    border: none;
+}
+
+.post .code pre {
+    font-size: 13px;
+    line-height: 1.42857;
+}
+
+.post img {
+    border: 0.3em solid #e0dfcc;
+    -moz-border-radius: 1em;
+    -webkit-border-radius: 1em;
+    border-radius: 1em;
+    max-width: 100%;
+    position: relative;
+}
+
+/** 有序列表和无序列表 **/
+.post ul {
+    padding: 0;
+    margin: -5px 0 20px 20px;
+    list-style: disc;
+}
+
+.post ul li {
+    display: list-item;
+    font-size: 16px;
+}
+
+.post ul li ul {
+    list-style: circle;
+}
+
+/** 引用 **/
+.post blockquote {
+    padding: 20px;
+    margin-bottom: 25px;
+    background-color: #f7f7f7;
+    border-left: 6px solid #b4b4b4;
+    word-break: break-word !important;
+    word-break: break-all;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 30px;
+}
+
+.post blockquote p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* 表格 */
+.post table {
+    margin: 20px 0;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-size: 14px;
+    word-wrap: break-all;
+    border: 1px solid #ccc;
+}
+.post thead {
+    display: table-header-group;
+    vertical-align: middle;
+}
+.post tbody {
+    display: table-row-group;
+    vertical-align: middle;
+}
+.post tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+.post table>tbody>tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
+}
+.post table>tbody>tr:nth-of-type(even) {
+    background-color: #f1f1f1;
+}
+.post th {
+    padding-bottom: 10px;
+    font-weight: 700;
+    border-bottom: 2px solid #ddd;
+    border-right: 2px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    vertical-align: middle;
+    font-weight: normal;
+}
+.post td {
+    border-bottom-width: 1px;
+    border-bottom: 2px solid #ddd;
+    border-right: 2px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    vertical-align: middle;
+    font-weight: normal;
+}

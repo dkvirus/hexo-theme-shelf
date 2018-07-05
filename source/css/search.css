@@ -1,0 +1,125 @@
+.local-search {
+    position: fixed;
+    top: 1em;
+    right: 3em;
+    text-align: left;
+    margin-top: 2%;
+    font-family: 'Comic Sans MS';
+}
+
+/* 文本框 */
+.local-search .local-search-input-cls {
+    opacity: 0.5;
+    width: 140px;
+    transition: all 0.3s;
+    outline: none;
+    padding: 3px 30px 3px 6px;
+    border-radius: 4px;
+    border: 1px solid #CCC;
+    color: #666;
+    font-size: 14px;
+}
+.local-search .local-search-input-cls:focus {
+    opacity: 1;
+    width: 180px;
+    transition: all 0.3s;
+} 
+.local-search .search-icon {
+    position: relative;
+    left: -30px;
+    color: #999;
+    cursor: pointer;
+}
+
+/* 下拉框 */
+.local-search-result-cls {
+    position: absolute;
+    z-index: 99;
+    width: 400px;
+    top: 40px;
+    right: 0;
+}
+
+.local-search-result-cls .local-search-empty {
+    color: #888;
+    line-height: 44px;
+    text-align: center;
+    display: block;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.local-search-result-cls  ul {
+    width: 360px;
+    max-height: 450px;
+    min-height: 0;
+    height: auto;
+    overflow-y: auto;
+    border: 1px solid #CCC;
+    padding: 10px 20px;
+    background: #fff;
+    box-shadow: 1px 2px 4px #CCC;
+    float: right;
+}
+
+.local-search-result-cls ul li {
+    text-align: left;
+    border-bottom: 1px solid #CCC;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    line-height: 30px;
+    font-weight: normal;
+}
+
+.local-search-result-cls ul li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.local-search-result-cls ul li a {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.local-search-result-cls ul li p {
+    font-size: 12px;
+    max-height: 124px;
+    line-height: 16px;
+    overflow: hidden;
+    color: #333;
+}
+
+.local-search-result-cls ul li em.search-keyword {
+    color: #e58c7c;
+}
+
+#local-search-close {
+    content: 'x';
+    position: absolute;
+    right: 14px;
+    top: 10px;
+    background: #fff;
+    color: #888;
+    border-radius: 100%;
+    line-height: 20px;
+    text-align: center;
+    font-size: 16px;
+    font-family: consolas;
+    border: 1px solid #CCC;
+    display: block;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    font-style: normal;
+    font-weight: normal;
+    transform: rotateZ(0);
+    transition: all 0.3s;
+}
+
+#local-search-close:hover {
+    border-color: #666;
+    color: #222;
+    transform: rotateZ(180deg);
+    transition: all 0.3s;
+}

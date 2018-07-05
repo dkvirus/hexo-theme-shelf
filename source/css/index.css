@@ -1,0 +1,185 @@
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, tt, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+    border-bottom: none;
+    font-weight: normal;
+    font-style: normal;
+    border: none;
+    color: #111111;
+}
+
+body {
+    background-color: #f5f5d5;
+    font-family: Georgia, serif;
+    line-height: 1.8em;
+    color: #111111;
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper {
+    overflow: hidden;
+    perspective: 1800px;
+    position: relative;
+    margin-top: 2%;
+}
+
+/* 书院二楼标题 */
+.title {
+    font-family: 隶书, Georgia,Times New Roman,Times,Songti SC,serif;
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    position: absolute;
+    right: 20%;
+    top: 5%;
+    font-size: 40px;
+    color: #e34860;
+}
+
+/* 书架 */
+.bookshelf {
+    overflow: hidden;
+    position: relative;
+    z-index: 5;   /* 盖住标题 */
+    width: 85%;
+    min-width: 780px;
+    max-width: 1260px;
+    margin: 10px auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1px;
+    transform: rotateY(30deg) scale(0.8);
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    box-shadow: -6px -6px 15px #888888, 6px -6px 15px #888888, 6px 6px 15px #888888;
+}
+.bookshelf:hover {
+    transform: rotateY(0deg) scale(1) translateX(90px);
+}
+/* 书柜 */
+.bookcase {
+    position: relative;
+    z-index: 10;
+    height: 240px;
+    border-width: 5px;
+    border-style: solid;
+    border-image: url(../images/wood.jpg) 30 30 round;
+    display: inline-block;
+    margin-right: 1px;
+    margin-bottom: 1px;
+}
+/* 书柜名称 */
+.bookcase .category {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 70px 0;
+    line-height: 50px;
+    text-align: center;
+    box-sizing: border-box;
+    background-color: #eeeeee;
+    font-size: 24px;
+    color: #333333;
+    text-shadow: 4px 4px 6px #333;
+}
+.bookcase:hover .category {
+    display: none;
+}
+/* 书柜实体 */
+.bookcase:hover ul {
+    height: 100%;
+    opacity: 1;
+    padding: 20px 40px 0 0;
+    box-sizing: border-box;
+    background-image: url(../images/wood.jpg);
+    box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.4) inset;
+}
+.bookcase ul {
+    height: 100%;
+    padding: 20px 40px 0 0;
+    box-sizing: border-box;
+    opacity: 0.2;
+}
+/* 一个 li 就是一本书 */
+.bookcase li {
+    box-sizing: border-box;
+    list-style: none;
+    width: 30px;
+    height: 100%;
+    display: inline-block;
+    margin-right: -3px;
+    perspective: 5000px;
+}
+.bookcase li a {
+    padding: 0px;
+    float: left;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+}
+.bookcase a:hover {
+    transform: translateZ(100px) rotate3d(1, 1, 0, -10deg);
+}
+.bookcase a:hover .front {
+    box-shadow: -1px 0 3px #ccc inset;
+    box-sizing: border-box;
+}
+.bookcase li .front {
+    width: 30px;
+    height: 200px;
+    position: absolute;
+    transform: translateZ(65px);
+    left: 50%;
+    top: 50%;
+    margin-left: -15px;
+    margin-top: -100px;
+    line-height: 30px;
+    text-align: center;
+    writing-mode: vertical-lr;
+    overflow: hidden;
+    color: #fff;
+    font-size: 10px;
+    letter-spacing: 2px;
+    z-index: 3;
+    border-radius: 5px;
+}
+.bookcase li .left {
+    width: 130px;
+    height: 200px;
+    transform: rotateY(-90deg) translateZ(15px);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -65px;
+    margin-top: -100px;
+    z-index: 2;
+}
+.bookcase li .right {
+    width: 130px;
+    height: 200px;
+    transform: rotateY(90deg) translateZ(15px);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -65px;
+    margin-top: -100px;
+    z-index: 2;
+}
+.bookcase li .top {
+    width: 30px;
+    height: 128px;
+    background-color: #ffffff;
+    transform: translateY(-98px) rotateX(90deg);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -15px;
+    margin-top: -64px;
+    box-shadow: 3px 5px 3px #ccc inset, -3px 5px 3px #ccc inset;
+    z-index: 1;
+}

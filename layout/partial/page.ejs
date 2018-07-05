@@ -1,0 +1,30 @@
+<style>
+    .pager a {
+        background-color: #0e83cd!important;
+        color: #fff!important;
+        font-weight: bold!important;
+        transition: transform 0.5s;
+    }
+    .pager a:hover {
+        transform: scale(1.05);
+    }
+</style>
+
+<nav>
+    <% var prev = page.prev_link %>
+    <% var next = page.next_link %>
+
+    <ul class="pager">
+        <% if (prev) { %>
+            <li class="previous"><a href="<%= url_for(prev) %>">上一页</a></li>
+        <% } else { %>
+            <li class="previous" style="display: none;"><a href="<%= url_for(prev) %>">上一页</a></li>  
+        <% } %>
+
+        <% if (next) { %>
+            <li class="next"><a href="<%= url_for(next) %>">下一页</a></li>
+        <% } else { %>
+            <li class="next" style="display: none;"><a href="<%= url_for(next) %>">下一页</a></li>
+        <% } %>
+    </ul>
+</nav>

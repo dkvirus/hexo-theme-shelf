@@ -1,0 +1,23 @@
+<style>
+    .sidebar {
+        position: fixed;
+        right: 10px;
+        top: 20%;
+        background-color: #ccc;
+        width: 280px;
+        max-height: 60vh;
+        padding: 20px;
+        opacity: 0.2;
+        overflow-x: auto;
+        border-radius: 20px;
+    }
+    .sidebar:hover {
+        opacity: 0.8;
+    }
+    .sidebar a:hover {
+        text-decoration: none;
+        color: green;
+    }
+</style>
+
+<%- article_sidebar(post.content) %>
