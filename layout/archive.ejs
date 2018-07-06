@@ -27,7 +27,7 @@
 </style>
     
 <div class="container" style="padding: 0 8%;">
-    <h1 class="archive-title">归档</h1>
+    <h1 class="archive-title">归档（<%= site.posts.length %>）</h1>
     <% var data = page.posts.data %>
     <% for (var i = 0; i < data.length; i++) { %>
         <a href="<%= url_for(data[i].path) %>" class="blog-item">

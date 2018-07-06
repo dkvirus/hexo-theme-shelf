@@ -133,36 +133,59 @@ hexo.extend.helper.register('article_sidebar', function(str, options={}) {
         headArr.push(obj);
     });
 
-    // 处理文本空格问题
-    const space = '&nbsp;&nbsp;&nbsp;&nbsp;';
-    headArr.map(item => {
-        if (h1) {
-            if (item.level === 2) {
-                item.text = `${space}${item.text}`;
-            } else if (item.level === 3) {
-                item.text = `${space}${space}${item.text}`;
-            }
-            return item;
-        } 
-        
-        if (h2) {
-            if (item.level === 3) {
-                item.text = `${space}${item.text}`;
-            }
-            return item;
-        }
-    });
+    let $h1 = null;
+    let $h2 = null;
+    const $ul = $('<ul class="sidebar"></ul>');
 
-    // 生成 html
-    let result = '<ul class="sidebar">';
-    headArr.map(item => {
-        result += `
-            <li>
-                <a href="#${item.id}">${item.text}</a>
-            </li>
-        `;
-    });
-    result += '</ul>';
+    if (h1) {   // 存在 h1 标签
+        for (let i = 0; i < headArr.length; i++) {
+            if (headArr[i].level === 1) {
+                const $li = $(`<li><a href="#${headArr[i].id}">${headArr[i].text}</a><ul class="one"></ul></li>`)
+                $ul.append($li);
+                $h1 = $li;
+            } else if (headArr[i].level === 2) {
+                const $li = $(`<li><a href="#${headArr[i].id}">${headArr[i].text}</a><ul class="two"></ul></li>`);
+                if ($h1) {
+                    $h1.find('ul.one').append($li);
+                } else {
+                    $ul.append($li);
+                }
+                $h2 = $li;
+            } else {
+                const $li = $(`<li><a href="#${headArr[i].id}">${headArr[i].text}</a></li>`);
+                if ($h2) {
+                    $h2.find('ul.two').append($li);
+                } else {
+                    $ul.append($li);
+                }
+            }
+        }   
+    } else if (h2) {
+        for (let i = 0; i < headArr.length; i++) {
+            if (headArr[i].level === 2) {
+                const $li = $(`<li><a href="#${headArr[i].id}">${headArr[i].text}</a><ul class="one"></ul></li>`);
+                $ul.append($li);
+                $h2 = $li;
+            } else {
+                const $li = $(`<li><a href="#${headArr[i].id}">${headArr[i].text}</a></li>`);
+                if ($h2) {
+                    $h2.find('ul.one').append($li);
+                } else {
+                    $ul.append($li);
+                }
+            }
+        }   
+    } else if (h3) {
+        for (let i = 0; i < headArr.length; i++) {
+            const $li = $(`<li><a href="#${headArr[i].id}">${headArr[i].text}</a></li>`);
+            $ul.append($li);
+        }   
+    } else {
+        return null;
+    }
 
-	return result;
+    const $div = $('<div></div>');
+    $div.append($ul);
+
+	return $div.html();
 });

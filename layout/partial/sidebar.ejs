@@ -8,16 +8,44 @@
         max-height: 60vh;
         padding: 20px;
         opacity: 0.2;
-        overflow-x: auto;
+        overflow-x: hidden;
         border-radius: 20px;
     }
     .sidebar:hover {
         opacity: 0.8;
     }
+    .sidebar>li>ul {
+        display: none;
+    }
+    .sidebar .one, .two {
+        padding-left: 15px;
+    }
+    .sidebar>li.active>ul {
+        display: block;
+    }
+    .sidebar a {
+        display: inline-block;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
     .sidebar a:hover {
         text-decoration: none;
+        text-decoration: underline;
         color: green;
     }
 </style>
 
 <%- article_sidebar(post.content) %>
+
+<script>
+    $('.sidebar>li>a').on('click', function () {
+        if ($(this).parent().hasClass('active')) {
+            $(this).parent().removeClass('active');
+        } else {
+            $(this).parent().addClass('active');
+            $(this).parent().siblings().removeClass('active');
+        }
+    });
+</script>

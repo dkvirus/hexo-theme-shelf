@@ -1,6 +1,6 @@
 <div class="wrapper">
     <div class="bookshelf">
-        <% var posts = page.posts.map((item) => { item.path = url_for(item.path); return item; }) %>
+        <% var posts = site.posts.map((item) => { item.path = url_for(item.path); return item; }) %>
         <%- shelf_bookcase(posts) %>
     </div>
     <div class="title"><%= theme.title %></div>

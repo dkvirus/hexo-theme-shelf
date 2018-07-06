@@ -99,6 +99,13 @@
     box-shadow: 6px 0 6px #ccc inset, -6px 0 6px #ccc inset;
     display: block;
 }
+.body span {
+    position: absolute;
+    left: 40%;
+    top: 40%;
+    font-size: 18px;
+}
+
 .heart {
     width: 3em;
     height: 3em;
@@ -144,13 +151,7 @@
     transform: rotate(-3deg);
     -webkit-transform: rotate(-3deg);
 }
-.comp {
-    position: absolute;
-    top: 6em;
-    left: 1em;
-    font-size: 18px;
-    font-family: "隶书", "宋体";    
-}
+
 
 
 /* 两条手 */
@@ -259,6 +260,11 @@
     z-index: 91;
     animation: hand-right 2s infinite linear;
 }
+.hand-right>span {
+    position: absolute;
+    right: 20px;
+    top: 180px;
+}
 
 .arm-right {
     width: 5em;
@@ -342,3 +348,20 @@
     border-radius: 30% 40% 45% 10px;
     box-shadow: 2px 0px 2px #999 inset, 4px 0px 4px #CCC inset, -4px 0px 4px #CCC inset;
 } 
+.leg-right span {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+}
+
+.dabai-tip {
+    font-size: 14px;
+    color: #31708f;
+    font-weight: bold;
+    transform: rotateZ(0);
+    transition: all 0.3s;
+}
+.dabai-tip:hover {
+    transform: rotateZ(360deg);
+    transition: all 0.3s;
+}
